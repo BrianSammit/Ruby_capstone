@@ -1,7 +1,6 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 
 require 'telegram/bot'
-require_relative 'trivias'
 require_relative 'music'
 require_relative 'phrases'
 
@@ -9,7 +8,6 @@ class Bot
   def initialize
     @token = '1350164700:AAFxaHPVzvJnbBLVguhiUDkWyakr2m2pyYA'
     @music = Music.new
-    @triv = Trivias.new
     @phrase = Phrases.new
 
     Telegram::Bot::Client.run(@token) do |bot|
@@ -57,25 +55,6 @@ class Bot
           @phrase.random_phrase(@phrase.french)
           bot.api.send_message(chat_id: message.chat.id, text: @phrase.random_phrase(@phrase.french).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /phrase or want to try a diferent funtion /music /trivia or you want to /stop')
-        when '/trivia'
-          @answers = Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard: [%w[A B], %w[C D]], one_time_keyboard: true)
-          bot.api.send_message(chat_id: message.chat.id, text: @triv.triv_pick(@triv.trivia), reply_markup: @answers)
-        when 'A'
-          bot.api.send_message(chat_id: message.chat.id, text: "The correct answer is #{@triv.ans(@triv.trivia)}")
-          bot.api.send_message(chat_id: message.chat.id, text: @triv.triv_pick(@triv.trivia), reply_markup: @answers)
-          bot.api.send_message(chat_id: message.chat.id, text: 'Want to try a diferent funtion /music /prhase or you want to /stop')
-        when 'B'
-          bot.api.send_message(chat_id: message.chat.id, text: "The correct answer is #{@triv.ans(@triv.trivia_ans)}")
-          bot.api.send_message(chat_id: message.chat.id, text: @triv.triv_pick(@triv.trivia), reply_markup: @answers)
-          bot.api.send_message(chat_id: message.chat.id, text: 'Want to try a diferent funtion /music /prhase or you want to /stop')
-        when 'C'
-          bot.api.send_message(chat_id: message.chat.id, text: "The correct answer is #{@triv.ans(@triv.trivia_ans)}")
-          bot.api.send_message(chat_id: message.chat.id, text: @triv.triv_pick(@triv.trivia), reply_markup: @answers)
-          bot.api.send_message(chat_id: message.chat.id, text: 'Want to try a diferent funtion /music /prhase or you want to /stop')
-        when 'D'
-          bot.api.send_message(chat_id: message.chat.id, text: "The correct answer is #{@triv.ans(@triv.trivia_ans)}")
-          bot.api.send_message(chat_id: message.chat.id, text: @triv.triv_pick(@triv.trivia), reply_markup: @answers)
-          bot.api.send_message(chat_id: message.chat.id, text: 'Want to try a diferent funtion /music /prhase or you want to /stop')
         when '/stop'
           kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
           bot.api.send_message(chat_id: message.chat.id, text: "Sorry to see you go, Bye, #{message.from.first_name} :(", reply_markup: kb)
