@@ -9,11 +9,17 @@ class Bot
       bot.listen do |message|
         case message.text
         when '/start'
-          bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
-        when '/map'
-          bot.api.send_location(chat_id: message.chat.id, latitude: -37.807416, longitude: 144.985339)
-        when '/trivia'
+          bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name} I'm funzo bot that going to give you a trivias. to start the bot type /start to stop it type /stop and you can choose from diferents trivias: /history")
+        when '/history'
           @answers = Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard: [%w(A B), %w(C D)], one_time_keyboard: true)   
+          bot.api.send_message(chat_id: message.chat.id, text: @mood.triv_pick(@mood.history), reply_markup: @answers)
+        when "A"
+          bot.api.send_message(chat_id: message.chat.id, text: @mood.triv_pick(@mood.history), reply_markup: @answers)
+        when "B"
+          bot.api.send_message(chat_id: message.chat.id, text: @mood.triv_pick(@mood.history), reply_markup: @answers)
+        when "C"
+          bot.api.send_message(chat_id: message.chat.id, text: @mood.triv_pick(@mood.history), reply_markup: @answers)
+        when "D"
           bot.api.send_message(chat_id: message.chat.id, text: @mood.triv_pick(@mood.history), reply_markup: @answers)
         when '/stop'
           kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
