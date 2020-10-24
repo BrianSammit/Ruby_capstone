@@ -20,7 +20,7 @@ This project consist on made a Telegram BOT. This specific BOT give you a random
 
 ## 🎥 PRESENTATION VIDEO
 
-[Link Presentation Video]()
+[Link Presentation Video](https://www.loom.com/share/c1caa8e308eb4d0a8a37feb8bedf2f80)
 
 ## 🔧 Getting Started
 
