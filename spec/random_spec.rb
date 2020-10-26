@@ -1,11 +1,11 @@
-require_relative '../lib/music'
+require_relative '../lib/random'
 
-describe Music do
-  let(:song) { Music.new }
+describe Random do
+  let(:random) { Random.new }
 
   context 'initialize' do
     it 'It checks if the array is equal' do
-      expect(song.rock).to eq([
+      expect(random.rock).to eq([
                                 'https://www.youtube.com/watch?v=zUzd9KyIDrM',
                                 'https://www.youtube.com/watch?v=vjVkXlxsO8Q',
                                 'https://www.youtube.com/watch?v=Aiay8I5IPB8',
@@ -19,7 +19,7 @@ describe Music do
 
   context 'initialize' do
     it 'It checks if the array is equal' do
-      expect(song.techno).to eq([
+      expect(random.techno).to eq([
                                   'https://www.youtube.com/watch?v=KxCG0d93kMg',
                                   'https://www.youtube.com/watch?v=Mw9yzHEONg4',
                                   'https://www.youtube.com/watch?v=hsA2KXIhDS4',
@@ -33,7 +33,7 @@ describe Music do
 
   context 'initialize' do
     it 'It checks if the array is equal' do
-      expect(song.hiphop).to eq([
+      expect(random.hiphop).to eq([
                                   'https://www.youtube.com/watch?v=8AshnB1vq9c',
                                   'https://www.youtube.com/watch?v=l0U7SxXHkPY',
                                   'https://www.youtube.com/watch?v=wXhTHyIgQ_U',
@@ -47,7 +47,7 @@ describe Music do
 
   context 'initialize' do
     it 'It checks if the array is equal' do
-      expect(song.romantic).to eq([
+      expect(random.romantic).to eq([
                                     'https://www.youtube.com/watch?v=lp-EO5I60KA&list=PL64G6j8ePNureM8YCKy5nRFyzYf8I2noy',
                                     'https://www.youtube.com/watch?v=2Vv-BfVoq4g&list=PL64G6j8ePNureM8YCKy5nRFyzYf8I2noy&index=2',
                                     'https://www.youtube.com/watch?v=KRMOPcaIfuI&list=PL64G6j8ePNureM8YCKy5nRFyzYf8I2noy&index=3',
@@ -59,27 +59,74 @@ describe Music do
     end
   end
 
-  context 'random_music' do
-    it 'It checks if the array is equal to the array' do
-      expect(song.random_music(song.rock).class).to eq(String)
+  context 'initialize' do
+    it 'It checks if the array is equal' do
+      expect(random.colombian).to eq([
+        'One of the most popular Colombian phrases is “dar papaya” or to give papaya. This usually refers to safety or crime; if given the opportunity to take something, someone will, so don’t leave your wallet in your back pocket in busy areas.',
+        'Colombians say “que pena con usted” with the same frequency people from the US say they’re sorry, so it’s more of a habit than a real apology.',
+        'If you want someone to leave because you’re angry with them you say, “Largate!”, or get out of here.',
+        'Instead of telling you to be careful, a Colombian would tell you to put your batteries in: ponte las pilas!',
+        'If a Colombian messes up or makes a mistake, they “shit it”: “la cagué.”',
+        'If something is really embarrassing, Colombians say, “Que oso!” In English that’s, “What a bear!”'
+      ])
     end
   end
 
-  context 'random_music' do
-    it 'It checks if the array is equal to the array' do
-      expect(song.random_music(song.techno).class).to eq(String)
+  context 'initialize' do
+    it 'It checks if the array is equal' do
+      expect(random.french).to eq([
+                                    "À vaillant coeur rien d’impossible. -Jacques Cœur
+            “For a valiant heart nothing is impossible",
+                                    "Dans une grande âme tout est grand. -Blaise Pascal
+            “In a great mind everything is great.”",
+                                    "Chacun voit midi à sa porte. -French proverb
+            “Everyone sees noon at his own door.”",
+                                    "Je pense, donc je suis. -Rene Descartes
+            “I think, therefore, I am.”",
+                                    "On ne change pas une équipe qui gagne. -French proverb
+            “One does not change a winning team.” In other words, if it ain’t broke, don’t fix it.",
+                                    "Prouver que j’ai raison serait accorder que je puis avoir tort. -Pierre Augustin Caron de Beaumarchais
+             “Proving that I am right would be admitting that I could be wrong.”",
+                                    "On n’est point toujours une bête pour l’avoir été quelquefois. -Denis Diderot
+            “Being a fool sometimes does not make one a fool all the time.”"
+                                  ])
     end
   end
 
-  context 'random_music' do
+  context 'random_select' do
     it 'It checks if the array is equal to the array' do
-      expect(song.random_music(song.hiphop).class).to eq(String)
+      expect(random.random_select(random.rock).class).to eq(String)
     end
   end
 
-  context 'random_music' do
+  context 'random_select' do
     it 'It checks if the array is equal to the array' do
-      expect(song.random_music(song.romantic).class).to eq(String)
+      expect(random.random_select(random.techno).class).to eq(String)
+    end
+  end
+
+  context 'random_select' do
+    it 'It checks if the array is equal to the array' do
+      expect(random.random_select(random.hiphop).class).to eq(String)
+    end
+  end
+
+  context 'random_select' do
+    it 'It checks if the array is equal to the array' do
+      expect(random.random_select(random.romantic).class).to eq(String)
+    end
+  end
+
+  context 'random' do
+    it 'It checks if the array is equal to the array' do
+      expect(random.random_select(random.japanes).class).to eq(String)
+    end
+  end
+
+  context 'random_random' do
+    it 'It checks if the array is equal to the array' do
+      expect(random.random_select(random.colombian).class).to eq(String)
     end
   end
 end
+

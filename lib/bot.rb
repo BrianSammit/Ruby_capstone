@@ -20,20 +20,20 @@ class Bot
               .new(keyboard: [%w[Rock Techno], %w[Hip-Hop Romantic]], one_time_keyboard: true)
           bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         when 'Rock'
-          @music.random_music(@music.rock)
-          bot.api.send_message(chat_id: message.chat.id, text: @music.random_music(@music.rock).to_s)
+          @options.random_select(@options.rock)
+          bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.rock).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /music or want to try a diferent funtion /phrase or you want to /stop')
         when 'Techno'
-          @music.random_music(@music.techno)
-          bot.api.send_message(chat_id: message.chat.id, text: @music.random_music(@music.techno).to_s)
+          @options.random_select(@options.techno)
+          bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.techno).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /music or want to try a diferent funtion /phrase or you want to /stop')
         when 'Hip-Hop'
-          @music.random_music(@music.hiphop)
-          bot.api.send_message(chat_id: message.chat.id, text: @music.random_music(@music.hiphop).to_s)
+          @options.random_select(@options.hiphop)
+          bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.hiphop).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /music or want to try a diferent funtion /phrase or you want to /stop')
         when 'Romantic'
-          @music.random_music(@music.romantic)
-          bot.api.send_message(chat_id: message.chat.id, text: @music.random_music(@music.romantic).to_s)
+          @options.random_select(@options.romantic)
+          bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.romantic).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /music or want to try a diferent funtion /phrase or you want to /stop')
         when '/phrase'
           question = 'Selec the country for the prhase'
@@ -42,16 +42,16 @@ class Bot
               .new(keyboard: [%w[Colombian Japanese], %w[French]], one_time_keyboard: true)
           bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         when 'Japanese'
-          @phrase.random_phrase(@phrase.japanes)
-          bot.api.send_message(chat_id: message.chat.id, text: @phrase.random_phrase(@phrase.japanes).to_s)
+         @options.random_select(@options.japanes)
+          bot.api.send_message(chat_id: message.chat.id, text:@options.random_select(@options.japanes).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /phrase or want to try a diferent funtion /music or you want to /stop')
         when 'Colombian'
-          @phrase.random_phrase(@phrase.colombian)
-          bot.api.send_message(chat_id: message.chat.id, text: @phrase.random_phrase(@phrase.colombian).to_s)
+         @options.random_select(@options.colombian)
+          bot.api.send_message(chat_id: message.chat.id, text:@options.random_select(@options.colombian).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /phrase or want to try a diferent funtion /music or you want to /stop')
         when 'French'
-          @phrase.random_phrase(@phrase.french)
-          bot.api.send_message(chat_id: message.chat.id, text: @phrase.random_phrase(@phrase.french).to_s)
+         @options.random_select(@options.french)
+          bot.api.send_message(chat_id: message.chat.id, text:@options.random_select(@options.french).to_s)
           bot.api.send_message(chat_id: message.chat.id, text: 'Want to try again /phrase or want to try a diferent funtion /music or you want to /stop')
         when '/stop'
           kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
