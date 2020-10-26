@@ -2,13 +2,11 @@
 
 require 'telegram/bot'
 require_relative 'random'
-require_relative 'phrases'
 
 class Bot
   def initialize
     @token = '1350164700:AAFxaHPVzvJnbBLVguhiUDkWyakr2m2pyYA'
-    @music = Music.new
-    @phrase = Phrases.new
+    @options = Random.new
 
     Telegram::Bot::Client.run(@token) do |bot|
       bot.listen do |message|
