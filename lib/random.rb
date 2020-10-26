@@ -94,6 +94,8 @@ class Random
     ]
   end
 
+  private
+
   def random_select(category)
     @result = category.sample
     @result
