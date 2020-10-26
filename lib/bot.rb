@@ -1,7 +1,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 
 require 'telegram/bot'
-require_relative 'music'
+require_relative 'random'
 require_relative 'phrases'
 
 class Bot
