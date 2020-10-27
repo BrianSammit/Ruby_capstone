@@ -96,6 +96,5 @@ class Random
 
   def random_select(category)
     @result = category.sample
-    @result
   end
 end
