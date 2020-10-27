@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require_relative '../lib/random'
 
 describe Random do
@@ -255,3 +256,5 @@ describe Random do
     end
   end
 end
+
+# rubocop:enable Layout/LineLength

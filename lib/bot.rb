@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/BlockLength, Metrics/MethodLength, Metrics/AbcSize
 
 require 'telegram/bot'
 require_relative 'random'
@@ -60,4 +60,4 @@ class Bot
   end
 end
 
-# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/BlockLength, Metrics/MethodLength, Metrics/AbcSize
