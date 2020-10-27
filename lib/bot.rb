@@ -12,9 +12,9 @@ class Bot
       bot.listen do |message|
         case message.text
         when '/start'
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["start_message"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['start_message'])
         when '/help'
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["commands"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['commands'])
         when '/music'
           question = 'Selec what you want to heard'
           answers =
@@ -23,16 +23,16 @@ class Bot
           bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         when 'Rock'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.rock))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["music_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['music_sentence'])
         when 'Techno'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.techno))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["music_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['music_sentence'])
         when 'Hip-Hop'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.hiphop))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["music_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['music_sentence'])
         when 'Romantic'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.romantic))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["music_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['music_sentence'])
         when '/phrase'
           question = 'Selec the country for the prhase'
           answers =
@@ -41,19 +41,19 @@ class Bot
           bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         when 'Japanese'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.japanes))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["phrase_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['phrase_sentence'])
         when 'Colombian'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.colombian))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["phrase_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['phrase_sentence'])
         when 'French'
           bot.api.send_message(chat_id: message.chat.id, text: @options.random_select(@options.french))
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["phrase_sentence"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['phrase_sentence'])
         when '/stop'
           kb = Telegram::Bot::Types::ReplyKeyboardRemove.new(remove_keyboard: true)
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["stop_message"], reply_markup: kb)
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["emoji"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['stop_message'], reply_markup: kb)
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['emoji'])
         else
-          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences["wrong_entry"])
+          bot.api.send_message(chat_id: message.chat.id, text: @options.sentences['wrong_entry'])
         end
       end
     end

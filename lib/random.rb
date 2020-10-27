@@ -100,13 +100,13 @@ class Random
 
   def sentences
     {
-      "start_message" => "Hello I'm funzo bot that going to give you a random song, and random phrase. to start the bot type /start to stop it type /stop. Type /music or /phrase  then select one button. type /help if yoy need to see the commands",
-      "commands" => "Here are the commands: \n /start \n /stop \n /music \n /phrase \n /help",
-      "music_sentence" => "Want to try again /music or want to try a diferent funtion /phrase or you want to /stop",
-      "phrase_sentence" => "Want to try again /phrase or want to try a diferent funtion /music or you want to /stop",
-      "wrong_entry" => "Wrong entry, please entry one of this options:/start \n /music \n /prhase \n /stop \n /help",
-      "stop_message" => "Sorry to see you go, Bye",
-      "emoji" => "😭"
+      'start_message' => "Hello I'm funzo bot that going to give you a random song, and random phrase. to start the bot type /start to stop it type /stop. Type /music or /phrase  then select one button. type /help if yoy need to see the commands",
+      'commands' => "Here are the commands: \n /start \n /stop \n /music \n /phrase \n /help",
+      'music_sentence' => 'Want to try again /music or want to try a diferent funtion /phrase or you want to /stop',
+      'phrase_sentence' => 'Want to try again /phrase or want to try a diferent funtion /music or you want to /stop',
+      'wrong_entry' => "Wrong entry, please entry one of this options:/start \n /music \n /prhase \n /stop \n /help",
+      'stop_message' => 'Sorry to see you go, Bye',
+      'emoji' => '😭'
     }
   end
 end
