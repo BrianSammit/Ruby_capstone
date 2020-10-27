@@ -97,4 +97,14 @@ class Random
   def random_select(category)
     @result = category.sample
   end
+
+  def sentences
+       sentences = {
+             "commands" => "Here are the commands: \n /start \n /stop \n /music \n /phrase \n /help",
+             "music_sentence" => "Want to try again /music or want to try a diferent funtion /phrase or you want to /stop",
+             "phrase_sentence" => "Want to try again /phrase or want to try a diferent funtion /music or you want to /stop",
+             "wrong_entry" => "Wrong entry, please entry one of this options:/start \n /music \n /prhase \n /stop \n /help",
+             "emoji" => "😭"
+       } 
+  end
 end
