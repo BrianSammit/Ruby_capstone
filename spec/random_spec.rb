@@ -234,13 +234,13 @@ describe Random do
 
   context 'random' do
     it 'It checks if the array is equal to the array' do
-      expect(random.random_select(random.japanes).class).to be String
+      expect(random.random_select(random.japanese).class).to be String
     end
   end
 
   context 'random' do
     it 'It checks if the array is equal to the array' do
-      expect(random.random_select(random.japanes).class).to_not be Numeric
+      expect(random.random_select(random.japanese).class).to_not be Numeric
     end
   end
 
