@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/MethodLength
 require_relative 'bot.rb'
 
 class Random
@@ -59,3 +60,5 @@ class Random
     }
   end
 end
+
+# rubocop:enable Metrics/MethodLength
