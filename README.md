@@ -18,10 +18,6 @@ This project consists on made a Telegram BOT. This specific BOT gives you random
 
 [Issue link](https://github.com/BrianSammit/Ruby_capstone/issues)
 
-## 🎥 PRESENTATION VIDEO
-
-[Link Presentation Video](https://www.loom.com/share/c1caa8e308eb4d0a8a37feb8bedf2f80)
-
 ## 🔧 Getting Started
 
 > To get a local copy and running, follow these simple steps.
