@@ -1,6 +1,6 @@
 # Funzo BOT
 
-This project consist on made a Telegram BOT. This specific BOT give you a random music or a random phrase.
+This project consists on made a Telegram BOT. This specific BOT gives you random music or a random phrase.
 
 ![screenshot](img/telegram.png)
 ![screenshot](img/telegram-1.png)
@@ -61,12 +61,12 @@ This project consist on made a Telegram BOT. This specific BOT give you a random
 
 ## How to run the RSpec test
 
-- You need to have the RSpec installed in you computer if you don't have it follow the steps.
+- You need to have the RSpec installed on your computer. If you don't have it follow the steps.
 
-Boot up your terminal and punch in gem install rspec to install RSpec. Once that’s done, you can verify your version of RSpec with rspec --version, which will output the current version of each of the packaged gems. Take a minute also to hit rspec --help and look through the various options available.
+Boot up your terminal and write the followring command `gem install rspec` to install RSpec. Once that’s done, you can verify your version of RSpec with `rspec --version`, which will output the current version of each of the packaged gems. Take a minute also to hit `rspec --help` and look through the various options available.
 
 - cd into the project and open a terminal.
-- In the teminal just write rspec to run the tests.
+- In the terminal just write `rspec` to run the tests.
 
 ## Authors
 
